@@ -14,21 +14,15 @@ func main() {
 }
 
 func isPalindrome(x int) bool {
-	result := true
-	if x < 0 {
-		result = false
-	} else {
-		digits := make([]int, 0, 10)
-		for x > 0 {
-			digits = append(digits, x%10)
-			x = x / 10
-		}
-		for i := 0; i < len(digits)/2; i++ {
-			if digits[i] != digits[len(digits)-i-1] {
-				result = false
-				break
-			}
-		}
+	input := x
+	output := 0
+	for input > 0 {
+		output = output*10 + input%10
+		input = input / 10
 	}
-	return result
+	if output != x {
+		return false
+	} else {
+		return true
+	}
 }
