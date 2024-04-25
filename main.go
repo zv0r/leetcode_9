@@ -17,7 +17,8 @@ func isPalindrome(x int) bool {
 	input := x
 	output := 0
 	for input > 0 {
-		output = output*10 + input%10
+		r := input % 10
+		output = output*10 + r
 		input = input / 10
 	}
 	if output != x {
